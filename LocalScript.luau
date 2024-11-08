@@ -5,7 +5,7 @@ local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
  
 local isDashing = false
-local dashCooldown = 5
+local dashCooldown = 7
 local lastDashTime = 0
  
 local function onKeyPress(input)
@@ -19,8 +19,8 @@ local function onKeyPress(input)
         lastDashTime = tick()
  
         -- [[Personalize o comportamento do dash com base nos requisitos do jogo]]
-        local dashSpeed = 100
-        local dashDuration = 0.5
+        local dashSpeed = 130
+        local dashDuration = 0.2
  
         local originalWalkSpeed = humanoid.WalkSpeed
         humanoid.WalkSpeed = dashSpeed
@@ -33,4 +33,4 @@ local function onKeyPress(input)
 end
  
 -- [[Conecte a função ao evento de pressionamento de tecla]]
-game:GetService("UserInputService").InputBegan:Connect(onKeyPres)
+game:GetService("UserInputService").InputBegan:Connect(onKeyPres.Q)
